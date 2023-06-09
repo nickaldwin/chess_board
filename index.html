@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess Board</title>
+</head>
+<body>
+    <style>
+     .chessboard{
+        font-family: monospace;
+        font-size: 20px;
+        line-height: 20px;
+        display: inline-block;
+     }
+    .chessboard .row{
+        height: 20px;
+    }
+
+    .chessboard .cell .light{
+        background-color: #f2f2f2;
+    }
+    .chessboard .cell .dark{
+        background-color: #333;
+        color: #fff;
+    }
+
+    </style>
+    <div class="chessboard" id="chessboard"></div>
+    <script>
+        function generateChessboard(size){
+            let chessboard = '';
+
+            for (let row = 0; row< size; row++){
+                for(let col = 0; col < size; col++){
+                    if((row +col) % 2 === 0){
+                        chessboard += '<div class="cell light"></div>';
+                    }else{
+                        chessboard += '<div class="cell dark"></div>';  
+                    }
+                }
+            }
+            chessboard += '<br>';
+        }
+
+        const size = 8;
+    const chessboardElement = document.getElementById('chessboard');
+    chessboardElement.innerHTML = generateChessboard(size);
+    </script>
+</body>
+</html>
