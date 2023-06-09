@@ -1,2 +1,2 @@
-# chess_game
-a simple chess game
+# chess_board
+a simple chess board
